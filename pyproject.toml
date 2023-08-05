@@ -10,6 +10,7 @@ packages = [{include = "to_do"}]
 python = "3.11.*"
 fastapi = "^0.100.1"
 uvicorn = "^0.23.2"
+pydantic = {extras = ["email"], version = "^2.1.1"}
 
 
 [tool.poetry.group.dev.dependencies]
