@@ -27,6 +27,8 @@ blue = "^0.9.1"
 ruff = "^0.0.282"
 httpx = "^0.24.1"
 isort = "^5.12.0"
+factory-boy = "^3.3.0"
+freezegun = "^1.2.2"
 
 [tool.ruff]
 line-length = 79
