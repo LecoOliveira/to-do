@@ -18,7 +18,7 @@ def test_create_todo(session: Session, user: User):
     todo = Todo(
         title='Test Todo',
         description='Test Desc',
-        state='draft',
+        state='done',
         user_id=user.id,
     )
 

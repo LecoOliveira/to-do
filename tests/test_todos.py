@@ -9,14 +9,14 @@ def test_create_todo(client, token):
         json={
             'title': 'Test todo',
             'description': 'Test todo description',
-            'state': 'draft',
+            'state': 'todo',
         },
     )
     assert response.json() == {
         'id': 1,
         'title': 'Test todo',
         'description': 'Test todo description',
-        'state': 'draft',
+        'state': 'todo',
     }
 
 
@@ -74,12 +74,12 @@ def test_list_todos_filter_description(session, user, client, token):
 
 def test_list_todos_filter_state(session, user, client, token):
     session.bulk_save_objects(
-        TodoFactory.create_batch(5, user_id=user.id, state=TodoState.draft)
+        TodoFactory.create_batch(5, user_id=user.id, state=TodoState.todo)
     )
     session.commit()
 
     response = client.get(
-        '/todos/?state=draft',
+        '/todos/?state=todo',
         headers={'Authorization': f'Bearer {token}'},
     )
 

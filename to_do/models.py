@@ -5,11 +5,8 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
 class TodoState(str, Enum):
-    draft = 'draft'
     todo = 'todo'
-    doing = 'doing'
     done = 'done'
-    trash = 'trash'
 
 
 class Base(DeclarativeBase):
